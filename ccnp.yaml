@@ -1,0 +1,20 @@
+apiVersion: "cilium.io/v2"
+kind: CiliumClusterwideNetworkPolicy
+description: "Deny all egress traffic except DNS"
+metadata:
+  name: "ccnp-test"
+spec:
+  endpointSelector: {}
+  egress:
+    - toEndpoints:
+        - matchLabels:
+            k8s-app: kube-dns
+            "k8s:io.kubernetes.pod.namespace": kube-system
+            field.cattle.io/projectId: p-txk5j
+      toPorts:
+      - ports:
+         - port: "53"
+           protocol: ANY
+        rules:
+          dns:
+            - matchPattern: "*"

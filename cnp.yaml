@@ -1,0 +1,16 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: "tofqdn-test"
+  namespace: playyou
+spec:
+  endpointSelector: {}
+  egress:
+  - toFQDNs:
+      - matchName: "cilium.io"
+      - matchName: "sub.cilium.io"
+      - matchPattern: "*.sub.cilium.io"
+    toPorts:
+      - ports:
+         - port: "443"
+           protocol: TCP
