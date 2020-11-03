@@ -2,7 +2,7 @@ apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
   name: "tofqdn-test"
-  namespace: playyou
+  namespace: playground
 spec:
   endpointSelector: {}
   egress:
