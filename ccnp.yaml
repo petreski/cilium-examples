@@ -1,6 +1,5 @@
 apiVersion: "cilium.io/v2"
 kind: CiliumClusterwideNetworkPolicy
-description: "Deny all egress traffic except DNS"
 metadata:
   name: "ccnp-test"
 spec:
@@ -8,12 +7,42 @@ spec:
   egress:
     - toEndpoints:
         - matchLabels:
-            k8s-app: kube-dns
+            "k8s-app": kube-dns
             "k8s:io.kubernetes.pod.namespace": kube-system
+        - {}
       toPorts:
       - ports:
          - port: "53"
-           protocol: ANY
+           protocol: UDP
+         - port: "80"
+           protocol: TCP
+         - port: "443"
+           protocol: TCP
+         - port: "4245"
+           protocol: TCP
+         - port: "6443"
+           protocol: TCP
+         - port: "8500"
+           protocol: TCP
+         - port: "8081"
+           protocol: TCP
         rules:
           dns:
             - matchPattern: "*"
+    - toCIDR:
+      - 8.8.8.8/32
+      - 8.8.4.4/32
+      toPorts:
+      - ports:
+        - port: "53"
+          protocol: UDP
+    - toEntities:
+      - host
+      - cluster
+    - toFQDNs:
+      - matchName: "route53.amazonaws.com"
+      - matchPattern: "*.api.letsencrypt.org"
+      toPorts:
+         - ports:
+           - port: "443"
+             protocol: TCP
