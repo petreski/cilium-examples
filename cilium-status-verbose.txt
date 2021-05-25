@@ -1,0 +1,81 @@
+KVStore:                Ok   Disabled
+Kubernetes:             Ok   1.20 (v1.20.2) [linux/amd64]
+Kubernetes APIs:        ["cilium/v2::CiliumClusterwideNetworkPolicy", "cilium/v2::CiliumEgressNATPolicy", "cilium/v2::CiliumEndpoint", "cilium/v2::CiliumNetworkPolicy", "cilium/v2::CiliumNode", "core/v1::Namespace", "core/v1::Node", "core/v1::Pods", "core/v1::Service", "discovery/v1beta1::EndpointSlice", "networking.k8s.io/v1::NetworkPolicy"]
+KubeProxyReplacement:   Strict   [eth1 192.168.99.102 (Direct Routing)]
+Cilium:                 Ok   1.10.0 (v1.10.0-952d9d3)
+NodeMonitor:            Listening for events on 8 CPUs with 64x4096 of shared memory
+Cilium health daemon:   Ok   
+IPAM:                   IPv4: 2/254 allocated from 10.0.0.0/24, 
+Allocated addresses:
+  10.0.0.42 (router)
+  10.0.0.43 (health)
+BandwidthManager:       Disabled
+Host Routing:           Legacy
+Masquerading:           BPF   [eth1]   10.0.0.0/24 [IPv4: Enabled, IPv6: Disabled]
+Clock Source for BPF:   ktime
+Controller Status:      19/19 healthy
+  Name                                  Last success    Last error   Count   Message
+  cilium-health-ep                      55s ago         never        0       no error   
+  dns-garbage-collector-job             14s ago         never        0       no error   
+  endpoint-1419-regeneration-recovery   never           never        0       no error   
+  endpoint-158-regeneration-recovery    never           never        0       no error   
+  endpoint-gc                           3m14s ago       never        0       no error   
+  k8s-heartbeat                         13s ago         never        0       no error   
+  mark-k8s-node-as-available            15h14m3s ago    never        0       no error   
+  metricsmap-bpf-prom-sync              2s ago          never        0       no error   
+  neighbor-table-refresh                2m56s ago       never        0       no error   
+  resolve-identity-1419                 2m56s ago       never        0       no error   
+  resolve-identity-158                  2m58s ago       never        0       no error   
+  sync-endpoints-and-host-ips           58s ago         never        0       no error   
+  sync-lb-maps-with-k8s-services        15h14m5s ago    never        0       no error   
+  sync-policymap-1419                   48s ago         never        0       no error   
+  sync-policymap-158                    48s ago         never        0       no error   
+  sync-to-k8s-ciliumendpoint (1419)     5s ago          never        0       no error   
+  sync-to-k8s-ciliumendpoint (158)      7s ago          never        0       no error   
+  template-dir-watcher                  never           never        0       no error   
+  update-k8s-node-annotations           15h14m19s ago   never        0       no error   
+Proxy Status:   OK, ip 10.0.0.42, 0 redirects active on ports 10000-20000
+Hubble:         Ok   Current/Max Flows: 1802/4095 (44.00%), Flows/s: 0.20   Metrics: Disabled
+KubeProxyReplacement Details:
+  Status:                Strict
+  Socket LB Protocols:   TCP, UDP
+  Devices:               eth1 192.168.99.102 (Direct Routing)
+  Mode:                  SNAT
+  Backend Selection:     Random
+  Session Affinity:      Enabled
+  XDP Acceleration:      Disabled
+  Services:
+  - ClusterIP:      Enabled
+  - NodePort:       Enabled (Range: 30000-32767) 
+  - LoadBalancer:   Enabled 
+  - externalIPs:    Enabled 
+  - HostPort:       Enabled
+BPF Maps:   dynamic sizing: on (ratio: 0.002500)
+  Name                          Size
+  Non-TCP connection tracking   65536
+  TCP connection tracking       131072
+  Endpoint policy               65535
+  Events                        8
+  IP cache                      512000
+  IP masquerading agent         16384
+  IPv4 fragmentation            8192
+  IPv4 service                  65536
+  IPv6 service                  65536
+  IPv4 service backend          65536
+  IPv6 service backend          65536
+  IPv4 service reverse NAT      65536
+  IPv6 service reverse NAT      65536
+  Metrics                       1024
+  NAT                           131072
+  Neighbor table                131072
+  Global policy                 16384
+  Per endpoint policy           65536
+  Session affinity              65536
+  Signal                        8
+  Sockmap                       65535
+  Sock reverse NAT              65536
+  Tunnel                        65536
+Encryption:              Disabled
+Cluster health:          1/1 reachable    (2021-05-25T12:15:57Z)
+  Name                   IP               Node        Endpoints
+  minikube (localhost)   192.168.99.102   reachable   reachable
