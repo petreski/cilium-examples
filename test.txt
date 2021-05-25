@@ -1,0 +1,2 @@
+NAME       ENDPOINT ID   IDENTITY ID   INGRESS ENFORCEMENT   EGRESS ENFORCEMENT   VISIBILITY POLICY   ENDPOINT STATE   IPV4         IPV6
+mediabot   2905          28328                                                                        ready            10.0.0.110   
