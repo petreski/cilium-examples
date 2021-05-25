@@ -1,0 +1,79 @@
+apiVersion: cilium.io/v2
+kind: CiliumEndpoint
+metadata:
+  creationTimestamp: "2021-05-24T14:09:09Z"
+  generation: 1
+  labels:
+    class: mediabot
+    org: empire
+  managedFields:
+  - apiVersion: cilium.io/v2
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:class: {}
+          f:org: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"3f9911e5-6518-4e04-8684-299753c5b15a"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:status:
+        .: {}
+        f:encryption: {}
+        f:external-identifiers:
+          .: {}
+          f:container-id: {}
+          f:k8s-namespace: {}
+          f:k8s-pod-name: {}
+          f:pod-name: {}
+        f:id: {}
+        f:identity:
+          .: {}
+          f:id: {}
+          f:labels: {}
+        f:networking:
+          .: {}
+          f:addressing: {}
+          f:node: {}
+        f:state: {}
+    manager: cilium-agent
+    operation: Update
+    time: "2021-05-24T14:09:09Z"
+  name: mediabot
+  namespace: default
+  ownerReferences:
+  - apiVersion: v1
+    blockOwnerDeletion: true
+    kind: Pod
+    name: mediabot
+    uid: 3f9911e5-6518-4e04-8684-299753c5b15a
+  resourceVersion: "1261"
+  uid: fbc0805e-9cf4-4399-a2dd-e6ee3af52945
+status:
+  encryption: {}
+  external-identifiers:
+    container-id: 5a6de039997e2e52f081e6b862e1bc1bb31983d2731d602f8d06bf809d41e0e5
+    k8s-namespace: default
+    k8s-pod-name: mediabot
+    pod-name: default/mediabot
+  id: 2905
+  identity:
+    id: 28328
+    labels:
+    - k8s:class=mediabot
+    - k8s:io.cilium.k8s.policy.cluster=default
+    - k8s:io.cilium.k8s.policy.serviceaccount=default
+    - k8s:io.kubernetes.pod.namespace=default
+    - k8s:org=empire
+  networking:
+    addressing:
+    - ipv4: 10.0.0.110
+    node: 192.168.99.102
+  state: ready
