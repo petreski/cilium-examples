@@ -1,0 +1,167 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-05-24T14:08:54Z"
+  labels:
+    Class: mediabot
+    Org: empire
+    class: mediabot
+    org: empire
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:class: {}
+          f:org: {}
+      f:spec:
+        f:containers:
+          k:{"name":"mediabot"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2021-05-24T14:08:54Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          f:Class: {}
+          f:Org: {}
+    manager: kubectl-label
+    operation: Update
+    time: "2021-05-24T16:12:40Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.88.0.11"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-05-24T21:03:04Z"
+  name: mediabot
+  namespace: default
+  resourceVersion: "11883"
+  uid: 3f9911e5-6518-4e04-8684-299753c5b15a
+spec:
+  containers:
+  - image: docker.io/tgraf/netperf
+    imagePullPolicy: Always
+    name: mediabot
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-qq4zg
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-qq4zg
+    secret:
+      defaultMode: 420
+      secretName: default-token-qq4zg
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-05-24T14:08:54Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-05-24T21:03:03Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-05-24T21:03:03Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-05-24T14:08:54Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://dbd91e59751f55af1ba71829f98fa6f36a01f9ab4c35e2aea39d7e41aa656aac
+    image: tgraf/netperf:latest
+    imageID: docker-pullable://tgraf/netperf@sha256:8e86f744bfea165fd4ce68caa05abc96500f40130b857773186401926af7e9e6
+    lastState:
+      terminated:
+        containerID: docker://84f7f4442af0fc19c0c7e67fbcf2530362eea4aa23c98560d4d043c9bd1687cf
+        exitCode: 137
+        finishedAt: "2021-05-24T20:59:18Z"
+        reason: Error
+        startedAt: "2021-05-24T15:13:18Z"
+    name: mediabot
+    ready: true
+    restartCount: 2
+    started: true
+    state:
+      running:
+        startedAt: "2021-05-24T21:02:49Z"
+  hostIP: 192.168.99.102
+  phase: Running
+  podIP: 10.88.0.11
+  podIPs:
+  - ip: 10.88.0.11
+  qosClass: BestEffort
+  startTime: "2021-05-24T14:08:54Z"
