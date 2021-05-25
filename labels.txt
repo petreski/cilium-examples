@@ -1,0 +1,18 @@
+mb5257:k8s apetresk$ kubectl get pods -A -o wide --show-labels
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE   IP               NODE       NOMINATED NODE   READINESS GATES   LABELS
+cilium-test   client-8655c47fd7-q7pvv            1/1     Running   1          21h   10.88.0.8        minikube   <none>           <none>            kind=client,name=client,pod-template-hash=8655c47fd7
+cilium-test   client2-657df6649d-qkgqs           1/1     Running   1          21h   10.88.0.10       minikube   <none>           <none>            kind=client,name=client2,other=client,pod-template-hash=657df6649d
+cilium-test   echo-same-node-d7dcc498d-zx787     1/1     Running   1          21h   10.88.0.9        minikube   <none>           <none>            kind=echo,name=echo-same-node,other=echo,pod-template-hash=d7dcc498d
+default       mediabot                           1/1     Running   2          23h   10.88.0.11       minikube   <none>           <none>            Class=mediabot,Org=empire,class=mediabot,org=empire
+kube-system   cilium-4bwxv                       1/1     Running   4          23h   192.168.99.102   minikube   <none>           <none>            controller-revision-hash=6df948dddb,k8s-app=cilium,pod-template-generation=1
+kube-system   cilium-operator-656654bd5c-6wt6s   0/1     Pending   0          23h   <none>           <none>     <none>           <none>            io.cilium/app=operator,name=cilium-operator,pod-template-hash=656654bd5c
+kube-system   cilium-operator-656654bd5c-k5tds   1/1     Running   4          23h   192.168.99.102   minikube   <none>           <none>            io.cilium/app=operator,name=cilium-operator,pod-template-hash=656654bd5c
+kube-system   coredns-74ff55c5b-k6hvp            1/1     Running   3          23h   10.88.0.7        minikube   <none>           <none>            k8s-app=kube-dns,pod-template-hash=74ff55c5b
+kube-system   etcd-minikube                      1/1     Running   3          23h   192.168.99.102   minikube   <none>           <none>            component=etcd,tier=control-plane
+kube-system   hubble-relay-66d494c4d4-dxzts      1/1     Running   1          22h   10.88.0.12       minikube   <none>           <none>            k8s-app=hubble-relay,pod-template-hash=66d494c4d4
+kube-system   hubble-ui-95d74d44c-ncvgq          3/3     Running   3          22h   10.88.0.6        minikube   <none>           <none>            k8s-app=hubble-ui,pod-template-hash=95d74d44c
+kube-system   kube-apiserver-minikube            1/1     Running   3          23h   192.168.99.102   minikube   <none>           <none>            component=kube-apiserver,tier=control-plane
+kube-system   kube-controller-manager-minikube   1/1     Running   4          23h   192.168.99.102   minikube   <none>           <none>            component=kube-controller-manager,tier=control-plane
+kube-system   kube-proxy-52v9d                   1/1     Running   3          23h   192.168.99.102   minikube   <none>           <none>            controller-revision-hash=b89db7f56,k8s-app=kube-proxy,pod-template-generation=1
+kube-system   kube-scheduler-minikube            1/1     Running   3          23h   192.168.99.102   minikube   <none>           <none>            component=kube-scheduler,tier=control-plane
+kube-system   storage-provisioner                1/1     Running   6          23h   192.168.99.102   minikube   <none>           <none>            addonmanager.kubernetes.io/mode=Reconcile,integration-test=storage-provisioner
